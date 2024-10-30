@@ -11,6 +11,11 @@ app.get('/', (req, res)=>{
     res.send('hello. TUDO OK');
 });
 
+
+app.get('/outrarota', (req, res)=>{
+    res.send('outra rota');
+});
+
 //Rotas mongodb
 
 
