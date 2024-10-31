@@ -3,6 +3,8 @@ const app = express();
 const port = 1313;
 
 
+//configuração middleware para aceitar json
+app.use(express.json());
 //import conection mongodb
 const NewUser = require('./mongodb');
 
