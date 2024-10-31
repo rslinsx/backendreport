@@ -6,14 +6,28 @@ const port = 1313;
 //import conection mongodb
 const NewUser = require('./mongodb');
 
-//Rota teste
+//Rotas
 app.get('/', (req, res)=>{
     res.send('hello. TUDO OK');
 });
 
 
-app.get('/outrarota', (req, res)=>{
-    res.send('outra rota');
+app.post('/register', (req,res)=>{
+    var novoUsuario = new NewUser({
+        email: req.body.email,
+        senha: req.body.senha,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        chave: true
+    });
+    
+    novoUsuario.save().then(()=>{
+        console.log('Usuário Cadastrado com sucesso!');
+    }).catch((err)=>{
+        console.log('Deu esse erro, fiote: ', err);
+    });
+
+    
 });
 
 //Rotas mongodb
