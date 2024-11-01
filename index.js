@@ -23,10 +23,12 @@ app.post('/register', (req,res)=>{
         chave: true
     });
     
-    novoUsuario.save().then(()=>{
-        console.log('Usuário Cadastrado com sucesso!');
-    }).catch((err)=>{
-        console.log('Deu esse erro, fiote: ', err);
+    novoUsuario.save().then(() => {
+        console.log('Usuário cadastrado com sucesso!');
+        res.status(201).json({ message: 'Usuário cadastrado com sucesso!' });
+    }).catch((err) => {
+        console.error('Erro ao cadastrar o usuário:', err);
+        res.status(500).json({ error: 'Erro ao cadastrar o usuário' });
     });
 
     
