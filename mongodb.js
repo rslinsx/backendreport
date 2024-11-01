@@ -5,7 +5,7 @@ require('dotenv').config();
 mongoose.connect(process.env.MONGODB_URL).then(()=>{
     console.log('Conectou', process.env.MONGODB_URL);
 }).catch((err)=>{
-    console.log('nao deu certo', err);
+    console.log('nao deu certo', process.env.MONGODB_URL, err);
 });
 
 
