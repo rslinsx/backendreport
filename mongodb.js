@@ -3,9 +3,9 @@ require('dotenv').config();
 
 //Conexão com mongodb
 mongoose.connect(process.env.MONGODB_URL).then(()=>{
-    console.log('Conectou', process.env.MONGODB_URL);
+    console.log('Conectou mongodb!!!!!!!!! hehe');
 }).catch((err)=>{
-    console.log('nao deu certo', process.env.MONGODB_URL, err);
+    console.log('nao deu certo', err);
 });
 
 
